@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+	<link href="/static/title.ico" mce_href="/static/title.ico" rel="bookmark" type="image/x-icon" />
+	<link href="/static/title.ico" mce_href="/static/title.ico" rel="icon" type="image/x-icon" />
+	<link href="/static/favicon.ico" mce_href="/static/title.ico" rel="shortcut icon" type="image/x-icon" />
+    <title>{% block title %}欢迎光临{% endblock title %}mydota</title>
+
+    <!--Bootstrap-->
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+    
+    {% block css %}
+
+    {% endblock css %}
+
+    {% block js %}
+
+    {% endblock js %}
+</head>
+<body style="background-color:#A9A9A9;color:White;">
+        {% block content %} 
+        {% endblock content %}
+	<div class="row clearfix" style="padding-top:20px;">
+		<div>
+			<div class="well well-sm">
+				<div style="text-align:center;color:red">声明 | 关于</div>
+				<div style = "text-align:center;margin:12px auto auto auto;color:black">
+				本站大部分内容来源于u9网、优酷网、太平洋网。只作学习之用，不进行任何商业用途。
+				</div>
+			</div>
+       </div>																																</div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

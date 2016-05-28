@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+	 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	 	<div class="navbar-header ">
+			<a class="navbar-brand" href="#"><img src="/static/dota.png" sty    le="position:relative;top:-5px"/></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-tab">
+				<li><a href="/">首页</a></li>
+				<li><a href="/news">新闻</a></li>
+				<li class="active"><a href="/player">选手</a></li>
+				<li><a href="/video">视频</a></li>
+				<li><a href="/live">直播</a></li>
+			</ul>
+		</div>
+	</div>
+	</br>
+	</br>
+	</br>
+	<div><img src="/static/base.jpg"></div>
+	<div style="width:100%;height:90%;background-color:#5B5B5B;margin:10px auto 0 auto">
+	<style>.playerlist{width:980px;height:750px;margin:10px auto 20px auto;background-color:#2F4F4F;} img{border:2px;solid #F00}</style>
+	<div class="playerlist">
+		</br>
+		<div style="font-size:18px;background-color:#00BFFF;margin:15px auto;font-weight:bold;color:White;padding-left:20px">选手列表</div>
+		</br>
+		<ul>
+			{% for player in playerlist %}
+				<li style="float:left;list-style-type:none;margin:10px 10px 10px 10px">
+				<a href="{{ player.slug }}">
+				<div><img src="/media/{{ player.playerImage }}"/></div>
+				<div style="text-align:center;color:White">{{ player.nick_name }}</div>
+				</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	</div>
+{% endblock content %}

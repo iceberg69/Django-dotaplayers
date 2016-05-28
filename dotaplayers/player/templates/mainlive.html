@@ -1,0 +1,46 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+	 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	 	<div class="navbar-header ">
+			<a class="navbar-brand" href="#"><img src="/static/dota.png" sty    le="position:relative;top:-5px"/></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-tab">
+				<li><a href="/">首页</a></li>
+				<li><a href="/news">新闻</a></li>
+				<li><a href="/player">选手</a></li>
+				<li><a href="/video">视频</a></li>
+				<li class="active"><a href="/live">直播</a></li>
+			</ul>
+		</div>
+	</div>
+	</br>
+	</br>
+	</br>
+	<div><img src="/static/base.jpg"></div>
+	<div style="width:100%;height:90%;background-color:#5B5B5B;margin:10px auto 0 auto">
+    <div style="background-color:White; width:960px;height:680px;margin:10px auto 20px auto;">
+        <div style="font-size:18px;background-color:Black;color:white;font-weight:bold;padding-left:20px">直播列表</div></br>
+        <style>.livelist li{float:left;list-style-type:none;margin:10px 10px 5px 10px;} a{text-decoration:none;}</style>
+        <ul class="livelist">
+            {% for live in livelist %}
+               <li>
+			   		<div style="width:200px;height:170px;">
+					<a href="{{ live.slug }}" target=_blank>
+						<div><img src="{{ live.live_img }}" width=200px height=145px></div>
+						<div style="color:Black;">
+							<div style="text-overflow:ellipsis; white-space:nowrap;overflow:hidden">{{ live.live_title }}
+							<div style="font-size:12px;color:Blue">({{ live.live_player }})</div>
+							</div>
+						</div>
+					</a>
+					</div>
+			   </li>
+				
+            {% endfor %}
+        </ul>
+		</div>
+    </div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,30 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+	 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	 	<div class="navbar-header ">
+			<a class="navbar-brand" href="#"><img src="/static/dota.png" sty    le="position:relative;top:-5px"/></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-tab">
+				<li><a href="/">首页</a></li>
+				<li><a href="/news">新闻</a></li>
+				<li><a href="/player">选手</a></li>
+				<li class="active"><a href="/video">视频</a></li>
+				<li><a href="/live">直播</a></li>
+			</ul>
+		</div>
+	</div>
+	</br>
+	</br>
+	</br>
+	<div><img src="/static/base.jpg"></div>
+	<div style="width:100%;height:90%;background-color:#5B5B5B;margin:10px auto 0 auto">
+    <div style="width:980;height:680px;background-color:White;margin:10px auto 20px auto;">
+        <h3 style="text-align:center;color:Black;padding-top:10px;">{{ video.video_name }}</h3></br>
+        <div>
+             <center><embed src={{ video.videoslug }} allowFullScreen="true"  quality="high" width="680px" height="540px" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></center>
+        </div>
+    </div>
+	</div>
+{% endblock content %}

@@ -1,0 +1,42 @@
+﻿{% extends "base.html" %}
+
+{% block content %}
+	 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	 	<div class="navbar-header ">
+			<a class="navbar-brand" href="#"><img src="/static/dota.png" sty    le="position:relative;top:-5px"/></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-tab">
+				<li><a href="/">首页</a></li>
+				<li><a href="/news">新闻</a></li>
+				<li><a href="/player">选手</a></li>
+				<li class="active"><a href="/video">视频</a></li>
+				<li><a href="/live">直播</a></li>
+			</ul>
+		</div>
+	</div>
+	</br>
+	</br>
+	</br>
+	<div><img src="/static/base.jpg"></div>
+	<div style="width:100%;height:90%;background-color:#5B5B5B;margin:10px auto 0 auto">
+    <div style="background-color:Black; width:960px;height:680px;margin:10px auto 20px auto;">
+        <div style="font-size:18px;background-color:white;color:black;font-weight:bold;padding-left:20px">视频列表</div></br>
+        <style>.videolist li{float:left;list-style-type:none;margin:10px 10px 5px 10px;} a{text-decoration:none;}</style>
+        <ul class="videolist">
+            {% for video in videolist %}
+               <li>
+			   		<div style="width:200px;height:170px;">
+					<a href="{{ video.slug }}" target=_blank>
+						<div><img src="/media/{{ video.image }}"></div>
+						<div style="color:White;">【{{video.author}}】 {{ video.video_name }}</div>
+					</a>
+					</div>
+			   </li>
+				
+            {% endfor %}
+        </ul>
+		</div>
+    </div>
+	</div>
+{% endblock content %}
